@@ -5,7 +5,13 @@
  * @return {number} - наибольший общий делитель
  */
 function gcd(a, b) {
-    // ваш код здесь
+    while (b !== 0) {
+        const remainder = a % b ;
+        a = b;
+        b = remainder;
+    }
+
+    return a;
 }
 
 // Примеры:

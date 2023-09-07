@@ -4,7 +4,7 @@
  * @return {string} - строковое представление объекта
  */
 function objectToString(obj) {
-    // ваш код здесь
+    return Object.entries(obj).map(([key, value]) => `${key}=${value}`).join('&');
 }
 
 // Примеры:

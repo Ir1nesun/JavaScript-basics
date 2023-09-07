@@ -13,7 +13,12 @@
  * @returns {number}
  */
 function sum(n) {
-    return undefined;
+ if (n <= 0) {
+    return 1;
+ }
+
+ let number = Array.from({length: n}, (_, i) => i + 1);
+return number.reduce((acc, curr) => acc + curr, 0);
 }
 
 module.exports = sum;

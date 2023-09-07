@@ -4,7 +4,17 @@
  * @return {string} - название свойства с наименьшим значением
  */
 function findMinProp(obj) {
-    // ваш код здесь
+    let minProp = null; 
+    let minValue = Infinity; 
+
+    for (let key in obj) {
+        if (obj[key] < minValue) {
+            minValue = obj[key]; 
+            minProp = key; 
+        }
+    }
+
+    return minProp;
 }
 
 // Примеры:

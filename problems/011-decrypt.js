@@ -16,7 +16,24 @@
  * @returns {string}
  */
 function decrypt(secret) {
-    return undefined;
+    let noSecret = secret.split('');
+    let message = noSecret.map(function(symbol) {
+        if (symbol >= 'a' && symbol <= 'z') {
+            let charCode = symbol.charCodeAt(0);
+
+            if (charCode === 'z'.charCodeAt(0)) {
+                return 'a';
+            } else {
+                return String.fromCharCode(charCode + 1);
+            }
+        } else {
+            return symbol;
+        }
+
+    });
+
+    return message.join('');
+
 }
 
 module.exports = decrypt;

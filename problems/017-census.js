@@ -13,7 +13,14 @@
  * @returns {undefined|number}
  */
 function census(list) {
-    return -1;
+    const result = list.reduce((acc, person, index) => {
+        if(person.gender === 'Male' && person.age > acc.age){
+            return {age: person.age, index: index};
+        }
+        return acc;
+    }, {age: -1, index: -1});
+
+    return result.index !== -1 ? result.index + 1 : undefined;
 }
 
 module.exports = census;

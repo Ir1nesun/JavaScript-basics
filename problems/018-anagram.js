@@ -15,7 +15,13 @@
  * @returns {boolean}
  */
 function anagram(x, y) {
-    return undefined;
-}
+    if (x === '' && y === '') {
+        return false;
+    }
 
+    const normalize = (str) => str.toLowerCase().split('').sort().join('');
+
+    return normalize(x) === normalize(y);
+}
+ 
 module.exports = anagram;

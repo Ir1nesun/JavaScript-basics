@@ -4,5 +4,8 @@
  * @return {string[]} - массив строк, содержащий только уникальные значения
  */
 function uniqueStrings(arr) {
-    // ваш код здесь
+    return [...new Set(arr)];
 }
+
+const strings = ["chocolate", "candy", "fruit", "candy", "honey", "fruit"];
+console.log(uniqueStrings(strings));

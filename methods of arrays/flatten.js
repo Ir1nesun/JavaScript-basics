@@ -5,5 +5,15 @@
     Например, flatten([1, [2, 3], [4, [5, 6]]]) должна вернуть [1, 2, 3, 4, 5, 6].
 * */
 function flatten(arr) {
-    // Your code
+    return arr.reduce(function(acc, item){
+        if (Array.isArray(item)){
+            acc = acc.concat(flatten(item));
+        } else {
+            acc.push(item);
+        }
+
+        return acc;
+    }, []);
 }
+
+console.log(flatten([1, [2, 3], [4, [5, 6]]]));

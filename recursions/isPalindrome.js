@@ -4,7 +4,11 @@
  * @return {boolean} - true, если строка является палиндромом, и false в противном случае
  */
 function isPalindrome(str) {
-    // ваш код здесь
+    const cleanedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+    const reversed = cleanedStr.split('').reverse().join('');
+
+    return cleanedStr === reversed;
 }
 
 // Примеры:

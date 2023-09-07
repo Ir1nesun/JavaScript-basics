@@ -13,7 +13,11 @@
  * @returns {number[]}
  */
 function union(a, b) {
-    return undefined;
+    let setA = new Set(a);
+    let setB = new Set(b);
+
+    let result = [...setA].filter(num => setB.has(num));
+    return result.sort((x, y) => x - y);
 }
 
 module.exports = union;

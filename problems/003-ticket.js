@@ -14,7 +14,17 @@
  * @returns {boolean}
  */
 function checkTicket(number) {
-    return undefined;
+    let first = number.slice(0, 3);
+    let last = number.slice (3, 6);
+
+    let firstSum = parseInt(first[0], 10) + parseInt(first[1], 10) + parseInt(first[2], 10);
+    let lastSum = parseInt(last[0], 10) + parseInt(last[1], 10) + parseInt(last[2], 10);
+
+    if (firstSum === lastSum) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 module.exports = checkTicket;

@@ -12,7 +12,31 @@
  * @returns {string}
  */
 function searchAnagrams(value) {
-    return undefined;
+    if (!value) {
+        return '';
+    }
+    
+    const normalize = (str) => str.toLowerCase().split('').sort().join('');
+    const words = value.match(/\b\w+\b/g) || []; 
+    const wordMap = {};
+
+    words.forEach((word) => {
+        const normalizedWord = normalize(word);
+        if (!wordMap[normalizedWord]) {
+            wordMap[normalizedWord] = [];
+        }
+        wordMap[normalizedWord].push(word); 
+    });
+
+    const anagrams = [];
+
+    for (let key in wordMap) {
+        if (wordMap[key].length > 1) {
+            anagrams.push(...wordMap[key]); 
+        }
+    }
+
+    return anagrams.join(' ');
 }
 
 module.exports = searchAnagrams;

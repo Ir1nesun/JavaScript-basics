@@ -5,5 +5,8 @@
  * @return {number[]} - массив, содержащий только элементы, которые есть в обоих массивах
  */
 function intersect(arr1, arr2) {
-    // ваш код здесь
+    const set2 = new Set(arr2);
+    return arr1.filter(element => set2.has(element));
 }
+
+console.log(intersect([1, 2, 3, 4], [3, 4, 5, 6]));

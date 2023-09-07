@@ -28,5 +28,19 @@
  Если массив содержит только один элемент, то функция должна вернуть связный список из одного узла.
  */
 function createList(arr) {
-    // Your code
+    if (arr.length === 0) {
+      return null;
+    }
+
+    let head = { value: arr[0], next: null};
+    let node = head;
+
+    for (let i = 0; i < arr.length; i++){
+      let newNode = {value: arr[i], next: null};
+      node.next = newNode
+      node = newNode;
+    }
+
+    return head;
 }
+console.log(createList([10]));

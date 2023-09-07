@@ -18,7 +18,20 @@
  * @returns {number}
  */
 function getSpringMeltStreak(temperature) {
-    return undefined;
+   let maxStreak = 0;
+   let currentStreak = 0;
+
+   for (let temp of temperature) {
+    if (temp > 0) { 
+        currentStreak += 1;
+    } else {
+        maxStreak = Math.max(maxStreak, currentStreak);
+        currentStreak = 0;
+    }
+}
+
+maxStreak = Math.max(maxStreak, currentStreak);
+return maxStreak;
 }
 
 module.exports = getSpringMeltStreak;
